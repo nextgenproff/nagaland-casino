@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title style="background-color: brown;">Dear lottery</title>
+  <title>Dear lottery</title>
   <style>
     /* Global Styles */
     body {
-      background: white;
+      background: #333;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -20,13 +20,12 @@
       padding: 15px;
       background: #FFD700;  /* Gold background */
       color: #333;
-      border: 3px solid #000; /* Black border */
+      border: 3px solid #000;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       font-size: 2em;
     }
-    
-    /* Lottery Info Section */
+    /* Lottery Info Section with Restored Full Text */
     .lottery-info {
       max-width: 800px;
       margin: 0 auto 30px auto;
@@ -37,7 +36,6 @@
     }
     .lottery-info h2 {
       font-size: 1.8em;
-      margin-bottom: 10px;
       text-align: center;
       color: #FFD700;
     }
@@ -51,47 +49,39 @@
       line-height: 1.6em;
       margin: 10px 0;
     }
-    /* Result Boxes Container */
+    /* Result Boxes */
     .result-times {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
     }
-    /* Result Box Styling */
     .result-box {
       border: 2px solid #FFD700;
       padding: 10px 20px;
       border-radius: 5px;
-      background: #222;
-      color: #FFD700;
+      background: red;
+      color: white;
       font-weight: bold;
       font-size: 1.1em;
       text-align: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .result-box.active {
+      background: black;
+      color: white;
     }
     @media (max-width: 600px) {
-      .lottery-info {
-        padding: 15px;
-      }
-      .lottery-info h2 {
-        font-size: 1.5em;
-      }
-      .lottery-info h3 {
-        font-size: 1.3em;
-      }
-      .lottery-info p {
-        font-size: 1em;
-      }
       .result-times {
         flex-direction: column;
         gap: 10px;
       }
     }
-    
-    /* Input Container */
+    /* Combination Lock Input */
     .input-container {
       text-align: center;
-      margin-bottom: 30px;
+      margin-top: 30px;
     }
     input[type="text"] {
       padding: 10px;
@@ -117,11 +107,10 @@
     button:hover {
       background: #0088cc;
     }
-    
     /* Combination Lock Frame */
     .lock-frame {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 30px auto;
       padding: 20px;
       border: 8px solid #555;
       border-radius: 15px;
@@ -147,8 +136,6 @@
       border: 3px solid #888;
       border-radius: 5px;
       background: #f0f0f0;
-      background-image: linear-gradient(135deg, #fff 25%, #ccc 25%, #ccc 50%, #fff 50%, #fff 75%, #ccc 75%, #ccc 100%);
-      background-size: 20px 20px;
       position: relative;
       box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
     }
@@ -168,13 +155,14 @@
       color: #333;
       font-weight: bold;
     }
-    /* Indicator Stick (Bold & Black) */
+    /* Moving Indicator Stick (Left Side) */
     .indicator-stick {
       position: absolute;
-      top: -10px; /* slightly above the reels */
-      width: 6px; /* bold */
+      top: -10px;
+      left: 5px;
+      width: 6px;
       height: calc(100% + 20px);
-      background: #000; /* black */
+      background: black;
       border-radius: 2px;
       transition: left 0.5s ease;
       z-index: 10;
@@ -183,14 +171,13 @@
 </head>
 <body>
   <h1>Dear lottery</h1>
-  
-  <!-- Lottery Information Section -->
+
+  <!-- Lottery Information Section with Full Text -->
   <div class="lottery-info">
     <h2>Dear Lottery Live Result Today</h2>
     <p>
       Dear lottery live result today offers a chance to win big prizes. The 1st prize is a whopping 1 crore rupees, followed by the 2nd prize of 9000 rupees, the 3rd prize of 450 rupees, the 4th prize of 250 rupees, and the 5th prize of 120 rupees.
     </p>
-    
     <h3>Dear Lottery Result Today 1 PM</h3>
     <p>
       Good news! The Nagaland State Lottery Department has just released the results for the 1 pm Dear Lottery chart. It’s time to check your luck for today.
@@ -198,7 +185,6 @@
     <p>
       In this Dear Lottery Today Result live for 1 pm, there are exciting prizes to be won. The 1st prize is a whopping 1 crore rupees. Additionally, there’s the 2nd Prize of 9000 Rupees, the 3rd Prize of 450 Rupees, the 4th Prize of 250 Rupees, and the 5th Prize of 120 Rupees.
     </p>
-    
     <h3>Dear Lottery Result Today 6 PM</h3>
     <p>
       Exciting news! The Nagaland State Lottery Department has just announced the results for the 6 pm Dear Lottery Chart Today Live Sambad. It’s your chance to check if fortune has smiled on you today.
@@ -206,52 +192,54 @@
     <p>
       In this Lottery Sambad Today 6 pm Result, there are fantastic prizes up for grabs. The 1st prize is a whopping 1 crore rupees, and there’s also the 2nd Prize of 9000 Rupees, the 3rd Prize of 450 Rupees, the 4th Prize of 250 Rupees, and the 5th Prize of 120 Rupees.
     </p>
-    
     <h3>Dear Lottery Result Today 8 PM</h3>
     <p>
       Finally, The Wait is Now OVER! The Nagaland State Lottery Department has just unveiled the results for the 8 pm Dear Lottery. It’s time to find out if today’s luck is on your side.
     </p>
-    
-    <!-- Result Time Boxes -->
-    <div class="result-times">
-      <div class="result-box">1:00 PM RESULT</div>
-      <div class="result-box">6:00 PM RESULT</div>
-      <div class="result-box">8:00 PM RESULT</div>
-    </div>
   </div>
-  
+
+  <!-- Result Time Boxes -->
+  <div class="result-times">
+    <div class="result-box" onclick="toggleResult(this)">1:00 PM RESULT</div>
+    <div class="result-box" onclick="toggleResult(this)">6:00 PM RESULT</div>
+    <div class="result-box" onclick="toggleResult(this)">8:00 PM RESULT</div>
+  </div>
+
   <!-- Combination Lock Input -->
   <div class="input-container">
-    <input type="text" id="comboInput" placeholder="Enter Ticket" maxlength="5" inputmode="numeric" />
-    <button onclick="setLock()">Submit Ticket</button>
+    <input type="text" id="comboInput" placeholder="Enter Ticket " maxlength="5" inputmode="numeric" />
+    <button onclick="setLock()">Submit Ticket </button>
   </div>
-  
+
   <!-- Combination Lock Frame -->
   <div class="lock-frame">
     <div class="lock-container" id="lockContainer">
-      <!-- Reels will be dynamically inserted -->
-      <div class="indicator-stick" id="indicatorStick" style="left:0;"></div>
+      <div class="indicator-stick" id="indicatorStick"></div>
     </div>
   </div>
-  
+
   <script>
-    // Configuration
+    // Toggle result box color while resetting others
+    function toggleResult(element) {
+      document.querySelectorAll(".result-box").forEach(box => box.classList.remove("active"));
+      element.classList.add("active");
+    }
+
+    // Combination lock functionality
     const reelCount = 5;
-    const reelHeight = 80; // Must match .digit height in CSS
-    const animationDelay = 200; // Delay between each reel's start (in ms)
+    const reelHeight = 80;
+    const animationDelay = 200;
     const digits = Array.from({ length: 10 }, (_, i) => i);
     
     const lockContainer = document.getElementById("lockContainer");
-    
-    // Function to create a single digit reel element
+
     function createReel() {
       const reelDiv = document.createElement("div");
       reelDiv.classList.add("digit-reel");
-      
+
       const reelInner = document.createElement("div");
       reelInner.classList.add("reel");
-      
-      // Append digits twice for a smooth full roll effect
+
       const allDigits = digits.concat(digits);
       allDigits.forEach(num => {
         const digitDiv = document.createElement("div");
@@ -259,48 +247,29 @@
         digitDiv.textContent = num;
         reelInner.appendChild(digitDiv);
       });
-      
+
       reelDiv.appendChild(reelInner);
       return reelDiv;
     }
-    
-    // Initialize the five reels
+
     for (let i = 0; i < reelCount; i++) {
-      const reel = createReel();
-      lockContainer.appendChild(reel);
+      lockContainer.appendChild(createReel());
     }
-    
-    // Function to set the combination and animate reels and indicator
+
     function setLock() {
       const inputVal = document.getElementById("comboInput").value.trim();
-      
-      // Validate: exactly 5 numeric digits
       if (!/^\d{5}$/.test(inputVal)) {
         alert("Please enter exactly 5 numeric digits.");
         return;
       }
-      
-      const reelInners = document.querySelectorAll(".digit-reel .reel");
-      const reels = document.querySelectorAll(".digit-reel");
+      const reels = document.querySelectorAll(".digit-reel .reel");
       const indicator = document.getElementById("indicatorStick");
-      
-      // Animate each reel and concurrently move the indicator stick
-      inputVal.split("").forEach((digitChar, index) => {
-        const targetDigit = parseInt(digitChar, 10);
-        // Calculate offset: full cycle (10 digits) plus target digit
-        const totalOffset = (10 + targetDigit) * reelHeight;
-        
-        // Animate reel roll
+      inputVal.split("").forEach((digit, index) => {
+        const totalOffset = (10 + parseInt(digit)) * reelHeight;
         setTimeout(() => {
-          reelInners[index].style.transform = `translateY(-${totalOffset}px)`;
-        }, index * animationDelay);
-        
-        // Move the indicator stick to the center of the reel concurrently
-        setTimeout(() => {
-          const currentReel = reels[index];
-          const leftPos =
-            currentReel.offsetLeft + (currentReel.offsetWidth / 2) - (indicator.offsetWidth / 2);
-          indicator.style.left = leftPos + "px";
+          reels[index].style.transform = `translateY(-${totalOffset}px)`;
+          // Position the stick on the left side of the current reel
+          indicator.style.left = reels[index].parentElement.offsetLeft + "px";
         }, index * animationDelay);
       });
     }
